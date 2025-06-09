@@ -1,0 +1,19 @@
+WITH numbers (num) AS (
+    SELECT 2 
+    FROM dual
+    UNION ALL
+    SELECT num + 1
+    FROM numbers
+    WHERE num < &number
+),
+primes AS (
+    SELECT num
+    FROM numbers n1
+    WHERE NOT EXISTS (
+        SELECT 1
+        FROM numbers n2
+        WHERE n2.num < n1.num
+        AND MOD(n1.num, n2.num) = 0
+    )
+)
+SELECT * FROM primes;
