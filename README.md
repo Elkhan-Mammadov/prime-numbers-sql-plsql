@@ -5,7 +5,9 @@ SQL Version: Uses a recursive Common Table Expression (CTE) to generate numbers 
 
 PL/SQL Version: Uses nested loops to check divisibility and identify prime numbers procedurally.
 
+
 How to Use
+
 Replace the input number (&number in PL/SQL or bind variable in SQL) with your desired upper limit.
 
 Run the scripts in your Oracle environment.
