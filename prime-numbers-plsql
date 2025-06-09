@@ -1,0 +1,17 @@
+DECLARE
+  v_num NUMBER := &number;
+  v_count NUMBER;
+BEGIN
+  FOR i IN 2..v_num LOOP  
+    v_count := 0;
+    FOR a IN 1..i LOOP
+      IF MOD(i, a) = 0 THEN
+        v_count := v_count + 1;
+      END IF;
+    END LOOP;
+    
+    IF v_count = 2 THEN
+      DBMS_OUTPUT.PUT_LINE(i || ' is a prime number');
+    END IF;
+  END LOOP;
+END;
